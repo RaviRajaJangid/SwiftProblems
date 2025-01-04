@@ -1,6 +1,50 @@
 //: [Previous](@previous)
 
 import UIKit
+
+//let a = [1,2,3]
+//[[123],
+// [132],
+// [213]
+// [231],
+// [312],
+// [321]]
+//0! 0
+//1! 1
+//2! 2
+//3! 6
+//4! 24
+//5! 120
+//6! 720
+//7! 5040
+
+func swap(_ nums: inout [Int], _ i: Int, _ j: Int) {
+    let temp = nums[i]
+    nums[i] = nums[j]
+    nums[j] = temp
+}
+
+func generatePermutationsRecursive(_ nums: inout [Int], _ start: Int, _ result: inout [[Int]]) {
+    if start == nums.count {
+        result.append(nums) // Add current permutation to result
+        return
+    }
+    for i in start..<nums.count {
+        swap(&nums, start, i) // Swap to place the current element
+        generatePermutationsRecursive(&nums, start + 1, &result) // Recurse
+        swap(&nums, start, i) // Backtrack
+    }
+}
+
+let nums = [1, 2, 3]
+var resultRecursive = [[Int]]()
+var numsCopy = nums // Mutable copy
+generatePermutationsRecursive(&numsCopy, 0, &resultRecursive)
+
+print("Permutations using recursion:")
+print(resultRecursive)
+
+
 //1. let aa = let ar = [3, 2, 1,  4, 10] sum = 12
 //2. let aa = [[[1, 2], 3, 4], 5, 6]
 //3. let a = [1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0]

@@ -1,8 +1,14 @@
 import UIKit
 
+func rotateArray(ar:[Int],at: Int)->[Int] {
+    let r = at % ar.count
+    let arr = Array(ar[r..<ar.count] + ar[0..<r])
+    return arr
+}
+print(rotateArray(ar: [1,2,3,4,5], at:2))
 
 class InterviewAsked{
-    
+   
     
     /* 2. Find unique strings even after changeing order from an array of string*/
     func findUniqueItemsFromArray(input:[String]){
@@ -225,7 +231,7 @@ class InterviewAsked{
         return totalSum-arraySum
     }
     
-    /*18 wo Sum Problem*/
+    /*18 two Sum Problem*/
     func twoSumProblem(input:[Int], target:Int) -> (Int,Int)?{
         // [1,2,3,4] -> 5 5-1
         
@@ -247,11 +253,9 @@ class InterviewAsked{
     
     /*19 Array Rotation*/
     func arrayRotation(_ arr:[Int], at:Int) -> [Int]{
-        
         // [1,2,3,4,5,6,7]
-        let rotation = at%arr.count
+        let rotation = at % arr.count
         return Array(arr[rotation..<arr.count] + arr[0..<rotation])
-        
     }
     
     /*20. Merge Sorted Arrays*/
@@ -368,5 +372,5 @@ class InterviewAsked{
 
 let interview = InterviewAsked()
 //print(interview.findRandomChallange())
-print(interview.findUniqueItemsFromArrayT())
+print(interview.findRandomChallange())
 
