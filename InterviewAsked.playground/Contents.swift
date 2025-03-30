@@ -1,14 +1,8 @@
 import UIKit
 
-func rotateArray(ar:[Int],at: Int)->[Int] {
-    let r = at % ar.count
-    let arr = Array(ar[r..<ar.count] + ar[0..<r])
-    return arr
-}
-print(rotateArray(ar: [1,2,3,4,5], at:2))
 
 class InterviewAsked{
-   
+    
     
     /* 2. Find unique strings even after changeing order from an array of string*/
     func findUniqueItemsFromArray(input:[String]){
@@ -33,11 +27,9 @@ class InterviewAsked{
         
         var count = 0
         
-        for ch in str{
+        for ch in str where ch == char {
             
-            if ch == char{
-                count += 1
-            }
+            count += 1
             
         }
         
@@ -319,11 +311,9 @@ class InterviewAsked{
         
         for char in str{
             
-            if char == "("{
+            if char == "(" {
                 flag += 1
-            }
-            else if char == ")"
-            {
+            } else if char == ")" {
                 flag -= 1
             }
             
@@ -367,7 +357,7 @@ class InterviewAsked{
         print(random)
     }
     
-
+    
 }
 
 let interview = InterviewAsked()
