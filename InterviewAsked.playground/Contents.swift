@@ -1,5 +1,104 @@
-import UIKit
 
+let  a = 5 / 3
+print(a)
+
+import UIKit
+///solve three sum:
+///Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+/// Notice that the solution set must not contain duplicate triplets.
+func threeSum(_ nums: [Int]) -> [[Int]] {
+    let snums = nums.sorted()
+    var result: [[Int]] = []
+
+    for i in 0..<snums.count{
+      
+        if i > 0 && snums[i] == snums[i-1]{
+           continue
+        }
+        let x = snums[i]
+        let t = -x
+        var l = i + 1
+        var r = snums.count-1
+        while l < r {
+            let sum = snums[l] + snums[r]
+            if sum == t {
+                result.append([x ,snums[l] , snums[r]])
+                while l < r && snums[l] == snums[l+1]{
+                  l += 1
+                }
+                while l < r && snums[r] == snums[r-1]{
+                  r -= 1
+                }
+                l += 1
+                r -= 1
+            }else if sum < t {
+                l += 1
+            }else {
+                r -= 1
+            }
+        }
+    }
+    return result
+}
+let nums = [-1,0,1,2,-1,-4]
+print(threeSum(nums))
+
+
+
+//[7:0]=9-2
+//[2:1]=9-7
+//[-2:2]=9-11
+//[-6:3]=9-15
+
+func miniMaxSum(arr: [Int]) -> Void {
+    
+    // Write your code here
+    var sa = arr
+    sa.sort()
+let min = sa.dropLast().reduce(0){$0+$1}
+let max = sa.dropFirst().reduce(0){$0+$1}
+  print("\(min) \(max)")
+}
+var ttt = [1,3,5,7,9]
+for i in (0..<ttt.count).reversed(){
+    ttt[i] = ttt[i] * 2
+}
+
+
+miniMaxSum(arr: ttt)
+var n = 3
+
+print(n&1)
+n=2
+print(n&1)
+
+for i in (0...n-1).reversed() {
+    print(i)
+ }
+
+func diagonalDifference(arr: [[Int]]) -> Int {
+    // Write your code here
+   var ld = 0
+   var rd = 0
+   var row = arr.count - 1
+    for k in 0..<arr.count{
+       
+        ld = ld + arr[k][k]
+        print(row - k)
+        rd = rd + arr[row - k][k]
+    }
+   return abs(ld - rd)
+}
+
+
+let arr = [[11 ,2 ,4],[4, 5 ,6],[10 ,8 ,-12]]
+print(diagonalDifference(arr: arr))
+
+
+//let a = [1,2,3,4,5]
+//let s = a.reduce(0) { $0 + $1 }
+//print(s)
+Loging().exe()
 
 class InterviewAsked{
     
