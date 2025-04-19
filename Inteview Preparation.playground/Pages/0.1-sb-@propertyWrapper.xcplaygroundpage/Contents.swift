@@ -1,3 +1,4 @@
+//: [Previous](@previous)
 import Foundation
 
 @propertyWrapper struct capitalised {
@@ -22,3 +23,5 @@ var u1 = User(firstName: "ravi", lastName: "raja")
 print(u1.firstName,u1.lastName)
 u1.lastName = "jangid"
 print(u1.firstName,u1.lastName)
+
+//: [Next](@next)

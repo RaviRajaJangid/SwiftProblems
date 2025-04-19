@@ -1,7 +1,4 @@
 //: [Previous](@previous)
-
-import Foundation
-
 //ARC is compile time not run time
 class Child {
     let name: String
@@ -29,7 +26,6 @@ var p:Person? = Person(name: "John")
 p?.child = Child(name:"Kivi", parent: p)
 
 p = nil
-
 
 
 //: [Next](@next)

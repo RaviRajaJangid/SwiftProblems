@@ -1,4 +1,6 @@
-import UIKit
+//: [Previous](@previous)
+import Foundation
+
 class Holder {
     var key: Int
     var value: Int = 0
@@ -138,3 +140,6 @@ print("Mid = \(midOf(array: queue))")
 
 //even +1
 //odd -1
+
+
+//: [Next](@next)

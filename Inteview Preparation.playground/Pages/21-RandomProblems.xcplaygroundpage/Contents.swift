@@ -1,6 +1,6 @@
 //: [Previous](@previous)
+import Cocoa
 
-import UIKit
 
 //let a = [1,2,3]
 //[[123],
@@ -160,6 +160,7 @@ print(a2)
 
 
 //output should be [1,2,3,4,5]
+
 
 
 //: [Next](@next)
